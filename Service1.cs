@@ -44,7 +44,7 @@ namespace PoolCleaner
             foreach (FileInfo file in workingDirectory.GetFiles())
             {
                 file.Delete();
-                nbDeletedFile++; 
+                nbDeletedFile++;
             }
             WriteToFile("Service is recall at " + DateTime.Now);
             WriteToFile("# Service Deleted " + nbDeletedFile + " Files --\n" );
