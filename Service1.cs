@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.IO;
-using Microsoft.Win32;
 
 namespace PoolCleaner
 {
     public partial class Service1 : ServiceBase
     {
-        private const int timerInterval = 5000;                            // milliseconds (86400000 -> 24 hour)
+        private const int timerInterval = 86400000;                        // milliseconds (86400000 -> 24 hour)
         private readonly Timer timer = new Timer();                        // C:\Windows\System32\spool\PRINTERS\
         private readonly DirectoryInfo workingDirectory = new DirectoryInfo("C:\\Windows\\System32\\spool\\PRINTERS\\");
         private readonly string logsPath = AppDomain.CurrentDomain.BaseDirectory + "\\logs";
